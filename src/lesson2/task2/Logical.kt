@@ -4,6 +4,7 @@ package lesson2.task2
 
 import lesson1.task1.sqr
 
+
 /**
  * Пример
  *
@@ -18,7 +19,16 @@ fun pointInsideCircle(x: Double, y: Double, x0: Double, y0: Double, r: Double) =
  * Четырехзначное число назовем счастливым, если сумма первых двух ее цифр равна сумме двух последних.
  * Определить, счастливое ли заданное число, вернуть true, если это так.
  */
-fun isNumberHappy(number: Int): Boolean = TODO()
+fun isNumberHappy(number: Int): Boolean {
+    var num: String
+    num = number.toString()
+    var a: Int = num[0].toInt()
+    var b: Int = num[1].toInt()
+    var c: Int = num[2].toInt()
+    var d: Int = num[3].toInt()
+    if (a+b == c+d) return  true
+    else return  false
+}
 
 /**
  * Простая
@@ -59,4 +69,11 @@ fun circleInside(
  * кирпич 4 х 4 х 4 пройдёт через отверстие 4 х 4.
  * Вернуть true, если кирпич пройдёт
  */
-fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean = TODO()
+fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean {
+    if (((r>=a) && (s>=b))||((r>=b) && (s>=a))
+    || ((r>=a) && (s>=c))||((r>=c) && (s>=a))
+    || (((r>=c)&& (s>=b))||((r>=b) && (s>=c))))
+        return true
+    else return false
+
+}
